@@ -280,3 +280,7 @@ print(classification_report(y_test, y_pred))
 ### Conclusion: 
 The **Random Forest Classifier Search CV with Hyperparameter Tuning** was chosen as the final model for its accurate performance and precision results. The model can handle imbalanced data and high-dimensional features making it ideal for credit card default prediction.
 
+# Conclusion: 
+Our model seems to be not having great power predicting the defaut customer, however its a lot better predicting not default customer.
+Predicting credit card default is a critical task for financial institutions to mitigate risk and optimize their lending strategies. By leveraging advanced machine learning techniques and robust data analysis, it is possible to build accurate models that can identify potential defaulters early on.
+
