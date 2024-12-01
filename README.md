@@ -117,7 +117,7 @@ print("Training Accuracy (Standard Scaling):", accuracy_score(y_train, y_pred_tr
 print("Testing Accuracy (Standard Scaling):", accuracy_score(y_test, y_pred_test_scaled))
 ```
 
-##### Results:
+#### Results:
 Training Accuracy: 80.84%
 Testing Accuracy: 81.45%
 Improved performance with scaling.
