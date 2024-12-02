@@ -272,13 +272,16 @@ print(classification_report(y_test, y_pred))
 ``` python
              precision    recall  f1-score   support
 
-           0       0.85      0.91      0.88
-           1       0.67      0.50      0.57
+           0       0.87      0.87      0.87
+           1       0.51      0.51      0.51
 
-    accuracy                           0.81  
+    accuracy                           0.79  
 ```
+Our model resulted in 79% predictive accuracy, and clearly shows that even after balancing it is more accurate in predicting credit loan holders that will not default (87% accuracy) than predicting credit loan holders that will default (51%).
+
 ### Conclusion: 
 The **Random Forest Classifier Search CV with Hyperparameter Tuning** was chosen as the final model for its accurate performance and precision results. The model can handle imbalanced data and high-dimensional features making it ideal for credit card default prediction.
+
 
 # Conclusion: 
 Our model seems to be not having great power predicting the defaut customer, however its a lot better predicting not default customer.
