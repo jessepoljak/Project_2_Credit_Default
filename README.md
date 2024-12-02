@@ -36,6 +36,45 @@ This project analyzes and predicts the probability of customer default by levera
 
 ---
 
+## Process
+### Import and create dataframe
+We begin by importing the data from UC Irvine. After creating the dataframe, we rename the features to make them more readable.
+
+### Drop Protected Information
+The original dataset contains demographic information. We determined that it was unethical to train our model on this information, so we dropped those features from the dataset.
+
+### Add const to the dataframe. Split the dataframe into X and y. Use VIF to check for multicollinearity.
+We add the const feature, which is a feature containing just the number 1, to check for multicollinearity. We then split the dataframe into a set of features (X) and a target variable (y). We use the Variance Inflation Factor (VIF) to look for multicollinearity and identified an instance of multicollinearity.
+
+### Drop the bill_amt features to a single feature and rerun our VIF test. Remove the const feature.
+Since we saw high multicollinearity between the bill_amt features, we dropped all but bill_amt1. Afterward, we tested for multicollinearity again and found none. We also removed the const feature since it was no longer needed.
+
+### Check for imbalance in our target variable
+Looking at the value counts for our target variable, we discovered a significant imbalance.
+
+### Train-test split the data
+We split the data into training and test sets.
+
+### Scale the data
+We scaled several features that had values in the thousands using standard scaling.
+
+### Balance the data
+We used the Synthetic Minority Oversampling Technique (SMOTE) to balance our target variable.
+
+### Check the variance score for Random Forest Classifier
+We checked the variance score for our proposed model and found that it had a variance score of ~0.001, which is excellent for our goal.
+
+### Train our model
+We selected the Random Forest Classifier as our model because our goal was to predict whether a credit card user would default next month. Decision tree models tend to be accurate but have high variance. Random Forest Classifier models correct for the high variance by averaging tree depth. Since predictability is our goal, we want a model with low variance. We then trained the model without any parameters.
+
+### Hyperparameter tuning
+We used RandomizedSearchCV to find optimal parameters for our model. We found that the best parameters were: n_estimators: 25, max_leaf_nodes: 9, max_features: 'sqrt', and max_depth: 9.
+
+### Retrain the model with our new parameters
+We retrained the model with our new parameters and checked the prediction results, which improved marginally. This is expected, as Random Forest Classifier models generally don't require much tuning.
+
+---
+
 ## Model Evaluation Attempts:
 
 ### 1. Balanced Random Forest Classifier
